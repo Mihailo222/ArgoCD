@@ -1,26 +1,22 @@
 # custom helm chart values
 
 customIngressResource:
-  enabled: true 
-  ingressClassName: nginx 
-  host: my-grafana.ui 
+  enabled: true
+  ingressClassName: nginx
+  host: grafana.local
   grafanaPath: "/grafana"
-  
+
   service:
     name: prom-grafana-application
-    port: 80 
+    port: 80
     servicenamespace: prometheus-grafana
 
 grafana:
   grafana.ini:
-   server:
-     root_url: http://grafana.local/grafana/
-     serve_from_sub_path: true
+    server:
+      root_url: http://grafana.local/grafana/
+      serve_from_sub_path: true
 
     database:
       wal: true
       cache_mode: shared
-
-
-# helm dependency build prometheus-grafana
-# helm install prometheus-grafana-release prometheus-grafana --namespace prometheus-grafana --create-namespace
