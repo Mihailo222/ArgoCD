@@ -13,6 +13,10 @@ customIngressResource:
 
 grafana:
   grafana.ini:
+   server:
+     root_url: http://grafana.local/grafana/
+     serve_from_sub_path: true
+
     database:
       wal: true
       cache_mode: shared
