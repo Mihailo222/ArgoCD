@@ -7,7 +7,7 @@ customIngressResource:
   grafanaPath: "/grafana"
   
   service:
-    name: prometheus-grafana-application
+    name: prom-grafana-application
     port: 80 
     servicenamespace: prometheus-grafana
 
