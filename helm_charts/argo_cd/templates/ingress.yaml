@@ -4,7 +4,10 @@
 apiVersion: networking.k8s.io/v1 
 kind: Ingress 
 metadata:
-  annotations: 
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    kubernetes.io/ingress.allow-http: "true"  
   name: {{ .Values.customIngressResource.service.name }}
   namespace: {{ .Values.customIngressResource.service.servicenamespace }}
 spec: 
